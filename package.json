@@ -4,6 +4,8 @@
   "description": "React App using the Star Wars API",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "start:dev": "nodemon --use-strict server/server.js",
     "start": "node server/server.js",
     "test": "jest"
