@@ -1,6 +1,8 @@
+import charactersList from '../assets/charactersList';
+
 const initialState = {
-  chars: {
-    list: [],
+  characters: {
+    list: charactersList,
     selected: {},
     errors: [],
   },
