@@ -1,6 +1,6 @@
 import { selectCharacter, clearSelected } from '../../../client/actions/characters';
 
-describe('actions --- return values', () => {
+describe('actions --- types check', () => {
   it('selectCharacter should have the the expected type: ', () => {
     let selectCharacterAction = selectCharacter();
 
