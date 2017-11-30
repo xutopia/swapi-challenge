@@ -20,6 +20,10 @@ export class Landing extends Component {
       this.setState({
         hasMovieList: true,
       })
+    } else {
+      this.setState({
+        hasMovieList: false,
+      })
     }
   }
   render() {

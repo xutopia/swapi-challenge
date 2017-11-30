@@ -18,6 +18,10 @@ export class Movies extends Component {
       this.setState({
         movies: nextProps.films.filmsDetails,
       })
+    } else {
+      this.setState({
+        movies: [],
+      })
     }
   }
 

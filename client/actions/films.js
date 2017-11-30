@@ -7,8 +7,7 @@ export const getFilms = createAction('getFilms', async (url) => {
 
   try {
     result = await axios.get(url);
-    // return result;
-  } catch(err) {
+  } catch (err) {
     result = err;
     throw err;
   }
@@ -24,10 +23,12 @@ export const getFilmsDetails = createAction('getFilmsDetails', async (films) => 
     try {
       let filmDetail = await axios.get(films[i]);
       result.push(filmDetail.data);
-    } catch(err) {
+    } catch (err) {
       throw err;
     }
   }
 
   return result;
 });
+
+export const clearFilms = createAction('clearFilms');
