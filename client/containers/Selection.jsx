@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import { selectCharacter } from '../actions/characters';
 import { getFilms, getFilmsDetails } from '../actions/films';
 import Character from '../components/Character.jsx';
@@ -42,11 +43,13 @@ export class Selection extends Component {
       )
     })
     return (
-      <div>
-        {
-          characterList
-        }
-      </div>
+      <Grid fluid>
+        <Row center="lg">
+          {
+            characterList
+          }
+        </Row>
+      </Grid>
     )
   }
 }

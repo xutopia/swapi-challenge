@@ -1,11 +1,14 @@
 import React from 'react';
+import { ListItem } from 'material-ui/List';
 
 
 const Movie = (props) => {
   return (
     <div>
-      <h1>{props.title}</h1>
-      <h3>{props.releaseDate}</h3>
+      <ListItem
+        primaryText={props.title}
+        secondaryText={props.releaseDate}
+      />
     </div>
   );
 }

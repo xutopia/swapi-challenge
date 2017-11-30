@@ -9,15 +9,30 @@ import Footer from '../components/Footer.jsx';
 export class Landing extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      hasMovieList: false,
+    }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.films.filmsDetails.length) {
+      this.setState({
+        hasMovieList: true,
+      })
+    }
+  }
   render() {
     return (
       <div>
         <Header />
         <Selection />
         <br />
-        <p>Information</p>
+        <div>
+          {
+            !this.state.hasMovieList ? <Info /> : <div></div>
+          }
+        </div>
         <Movies />
         <Footer />
       </div>

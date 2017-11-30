@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { List } from 'material-ui/List';
 import Movie from '../components/Movie.jsx';
 import util from '../util/util';
 
@@ -32,9 +33,9 @@ export class Movies extends Component {
     });
 
     return (
-      <div>
+      <List>
         {movies}
-      </div>
+      </List>
     )
   }
 }
