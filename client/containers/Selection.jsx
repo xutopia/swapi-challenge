@@ -17,7 +17,6 @@ export class Selection extends Component {
             this.props.getFilmsDetails(this.props.films.filmsLinks)
           })
           .catch((err) => {
-            // console.log('inside .catch');
             throw err;
           })
       })
