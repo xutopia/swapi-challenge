@@ -79,6 +79,7 @@ This app is deployed on AWS Elastic Beanstalk, and can be accessed via [this lin
 
 ## Contributing
 
+* Fix test errors
 * Update styling
 * Convert app to server-side React to improve SEO, server side routing, etc
 * Add more unit tests
