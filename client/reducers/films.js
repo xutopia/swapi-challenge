@@ -4,15 +4,22 @@ import initialState from './initialState';
 
 const films = handleActions({
   [getFilms](state, action) {
-    return {
-      ...state,
-      filmsLinks: action.payload.films,
-    };
+    if (action.payload.data) {
+      return {
+        ...state,
+        filmsLinks: action.payload.data.films,
+      };
+    } else {
+      return {
+        ...state,
+        errors: [...state.errors, action.payload.response.data],
+      }
+    }
   },
   [getFilmsDetails](state, action) {
     return {
       ...state,
-      filmsDetails: [...state.filmsDetails, action.payload.film],
+      filmsDetails: action.payload,
     }
   }
 }, initialState.films);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectCharacter } from '../actions/characters';
+import { getFilms, getFilmsDetails } from '../actions/films';
 import Character from '../components/Character.jsx';
 
 export class Selection extends Component {
@@ -9,7 +10,20 @@ export class Selection extends Component {
   }
 
   select = (char) => {
-    this.props.selectCharacter(char);
+    this.props.selectCharacter(char)
+      .then(() => {
+        this.props.getFilms(this.props.characters.selected.url)
+          .then(() => {
+            this.props.getFilmsDetails(this.props.films.filmsLinks)
+          })
+          .catch((err) => {
+            // console.log('inside .catch');
+            throw err;
+          })
+      })
+      .catch((err) => {
+        throw err;
+      })
   }
 
   render() {
@@ -41,12 +55,15 @@ export class Selection extends Component {
 const mapStateToProps = (state) => {
   return {
     characters: state.characters,
+    films: state.films,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
     selectCharacter: (...args) => dispatch(selectCharacter(...args)),
+    getFilms: (...args) => dispatch(getFilms(...args)),
+    getFilmsDetails: (...args) => dispatch(getFilmsDetails(...args)),
   });
 };
 
