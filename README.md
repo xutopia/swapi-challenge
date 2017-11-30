@@ -76,6 +76,7 @@ This app is deployed on AWS Elastic Beanstalk, and can be accessed via [this lin
 * [React.js](https://reactjs.org/) - Front end framework
 * [Node.js](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Jest](https://facebook.github.io/jest/) - Testing
+* [Travis CI](https://travis-ci.org/) - Continuous Integration
 
 ## Contributing
 
