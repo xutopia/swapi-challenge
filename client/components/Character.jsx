@@ -4,8 +4,11 @@ import Paper from 'material-ui/Paper';
 
 const Character = (props) => {
   return (
-    <Paper zDepth={props.depth || 1}>
-      <h1>hello Character</h1>
+    <Paper
+      zDepth={props.depth || 0}
+      onClick={props.handleClick}
+    >
+      <h1>{props.name}</h1>
     </Paper>
   );
 }

@@ -6,7 +6,7 @@ const characters = handleActions({
   [selectCharacter](state, action) {
     return {
       ...state,
-      selected: action.payload.character,
+      selected: action.payload,
     };
   },
   [clearSelected](state, action) {

@@ -15,4 +15,10 @@ export class Movies extends Component {
   }
 }
 
-export default connect()(Movies);
+const mapStateToProps = (state) => {
+  return {
+    films: state.films,
+  }
+}
+
+export default connect(mapStateToProps)(Movies);
