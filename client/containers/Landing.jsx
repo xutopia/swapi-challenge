@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Selection from './Selection.jsx';
+import Info from '../components/Info.jsx';
+import Movies from './Movies.jsx';
 
 export class Landing extends Component {
   constructor(props) {
@@ -9,10 +12,22 @@ export class Landing extends Component {
   render() {
     return (
       <div>
-        Hello Landing
+        <Header />
+        <Selection />
+        <br />
+        <p>Information</p>
+        <Movies />
+        <Footer />
       </div>
     )
   }
 }
 
-export default connect()(Landing);
+const mapStateToProps = (state) => {
+  return {
+    characters: state.characters,
+    films: state.films,
+  };
+}
+
+export default connect(mapStateToProps)(Landing);
