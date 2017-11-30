@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Movie from '../components/Movie.jsx';
+import util from '../util/util';
 
 export class Movies extends Component {
   constructor(props) {
@@ -12,7 +13,6 @@ export class Movies extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('looking at nextProps: ', nextProps);
     if (nextProps.films.filmsDetails.length) {
       this.setState({
         movies: nextProps.films.filmsDetails,
@@ -25,7 +25,7 @@ export class Movies extends Component {
       return (
         <Movie
           title={movie.title}
-          releaseDate={movie.release_date}
+          releaseDate={util.formatDate(movie.release_date)}
           key={movie.created}
           />
       )
